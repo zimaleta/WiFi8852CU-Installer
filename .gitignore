@@ -1,0 +1,11 @@
+# Editor/OS
+*.swp
+.DS_Store
+
+# Logs / tmp
+*.log
+/tmp/
+*.tmp
+
+# Build or local artifacts
+vendor/rtl8852cu-*/.git/
