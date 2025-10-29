@@ -9,3 +9,4 @@
 
 # Build or local artifacts
 vendor/rtl8852cu-*/.git/
+vendor/
