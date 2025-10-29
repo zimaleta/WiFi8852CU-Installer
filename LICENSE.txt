@@ -1,0 +1,8 @@
+ZimaletAI Proprietary License
+© 2025 Serge Kalashnik. All rights reserved.
+
+This software is licensed, not sold. Use of the software is subject to the following:
+- You are granted a 7-day evaluation (trial) from first install.
+- After the evaluation period, you must purchase a full license from https://zimaletai.com
+- You may not redistribute, reverse engineer, decompile, or otherwise exploit the software without a valid license.
+- Full licensing terms available at https://zimaletai.com/licensing
