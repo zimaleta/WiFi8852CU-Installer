@@ -56,7 +56,6 @@ trial_status(){
     return 0
   fi
 
-  # Block if tombstoned
   if [[ -f "$EXPIRED_FILE" ]]; then
     log "[!] Trial previously expired on this machine. Please purchase a license."
     return 2
@@ -87,7 +86,7 @@ trial_status(){
     return 2
   fi
 
-  left=$(( TRIAL_DAYS*86400 - (now - ts) ))
+  left=$(( TRIAL_DAYS*86400 - ($(date +%s) - ts) ))
   if (( left <= 0 )); then
     log "[!] Trial expired. Please purchase a license."
     write_tombstone
