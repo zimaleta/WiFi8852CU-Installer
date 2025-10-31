@@ -10,3 +10,7 @@
 # Build or local artifacts
 vendor/rtl8852cu-*/.git/
 vendor/
+
+# local junk
+main
+
