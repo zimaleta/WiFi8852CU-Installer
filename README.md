@@ -24,6 +24,13 @@ Expected output:
 ---
 
 ## Trial Users
+
+### Trial behavior & anti-reset
+- Trial binds to your machine (machine-id + first MAC).
+- When trial expires, a tombstone is written at `/var/lib/zimaletai/wifi8852cu.expired`.
+- Uninstalling (even with `--purge`) does **not** remove licensing state.
+- Reinstalling will **not** reset trial; please purchase a license.
+
 Start your free 7-day trial:
     sudo DEBUG=1 bash scripts/trial.sh
 
