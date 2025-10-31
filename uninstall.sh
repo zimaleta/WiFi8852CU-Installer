@@ -115,3 +115,8 @@ do_or_echo depmod -a || true
 
 say "[✓] Uninstall complete."
 say "[i] Tip: use --dry-run to preview, --keep-src to preserve /usr/src, and --purge to remove config files."
+echo "[i] Zima licensing state is preserved. Note:"
+echo "    - /etc/zimaletai/license.json, license.sig"
+echo "    - /etc/zimaletai/wifi8852cu.trial"
+echo "    - /var/lib/zimaletai/wifi8852cu.expired"
+echo "  Even with --purge these are NOT deleted."
