@@ -14,8 +14,9 @@ log(){ echo -e "$*"; }
 
 ensure_root(){
   if [[ $EUID -ne 0 ]]; then
-    echo "Please run with sudo." >&2; exit 1
-  }
+    echo "Please run with sudo." >&2
+    exit 1
+  fi
 }
 
 machine_fingerprint(){
@@ -32,7 +33,8 @@ has_valid_license(){
     exp=$(awk -F\" '/"expires":/ {print $4}' "$LIC_DATA" 2>/dev/null || echo "")
     now=$(date +%s)
     if [[ -n "$exp" && "$exp" =~ ^[0-9]+$ && $now -gt $exp ]]; then
-      log "[!] License expired."; return 1
+      log "[!] License expired."
+      return 1
     fi
     return 0
   fi
@@ -86,7 +88,7 @@ trial_status(){
     return 2
   fi
 
-  left=$(( TRIAL_DAYS*86400 - ($(date +%s) - ts) ))
+  left=$(( TRIAL_DAYS*86400 - (now - ts) ))
   if (( left <= 0 )); then
     log "[!] Trial expired. Please purchase a license."
     write_tombstone
