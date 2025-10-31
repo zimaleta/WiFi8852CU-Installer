@@ -78,7 +78,9 @@ if [[ -z "${MODULE_NAME:-}" ]]; then
 fi
 
 if [[ -n "${MODULE_NAME:-}" ]]; then
-  say "[i] Unloading kernel module: ${MODULE_NAME}"
+MODNAME=$(lsmod | awk '/^8852c[ua]?\s/ {print \$1; exit}')
+printf "[i] Unloading kernel module: %s\n" "${MODNAME:-8852cu}"
+modprobe -r "${MODNAME:-8852cu}" 2>/dev/null || true
   do_or_echo modprobe -r "$MODULE_NAME" || true
 else
   say "[i] No module file found to unload (may already be removed)."
